@@ -41,5 +41,6 @@ def solution1(text, pattern):
 
 s = "aab"
 p = "c*a*b"
-
+s = "aa"
+p = "."
 print(solution1(s, p))
