@@ -36,5 +36,6 @@ def solution(l1: ListNode,l2:ListNode):
         l1 = (l1.next if l1 else None)
         l2 = (l2.next if l2 else None)
     return l3.next
+#SOLO FUNCIONA EN LEETCODE 
 
-solution(l1,l2)
+#print(solution(l1,l2))

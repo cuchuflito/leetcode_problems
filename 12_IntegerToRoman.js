@@ -109,7 +109,37 @@ const solution2 = (num) => {
   return str
 };
 
+const solution3 = (num) => {
+  const tokenize = (num,char1,char5,char10) => {
+    word = ""
+    if(num<=0 || num>=10) return word
+    if(num===9) word = char1+char10
+    else if(num>=5) word = char5+char1.repeat(num-5)
+    else if(num==4) word = char1+char5
+    else word = char1.repeat(num)
+    return word
+
+  }
+  word = ""
+  thousands = (num/1000)>>0 // division entera
+  if(thousands>0){
+    word = word + "M".repeat(thousands)
+  }
+  num = num % 1000
+  hundreds = (num/100)>>0
+  word = word + tokenize(hundreds,'C','D','M')
+  
+  num = num % 100
+  tens = (num/10)>>0
+  word = word + tokenize(tens,'X','L','C')
+
+  num = num % 10
+  word = word + tokenize(num,'I','V','X')
+  return word
+
+}
+
 let num = 58;
 num = 1994;
 num = 1900;
-console.log(solution2(859));
+console.log(solution3(3));

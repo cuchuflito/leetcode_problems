@@ -16,7 +16,7 @@
 
 def solution1(num):
 
-    if num < 0 or num % 10 == 0:
+    if num < 0 or (num % 10 == 0 and num != 0):
         return False
 
     # arr = [int(x) for x in str(num)]
@@ -29,6 +29,17 @@ def solution1(num):
 
 def solution2(num):
     return str(num) == str(num)[::-1]
+
+
+def solution3(num):
+    if num < 0 or (num % 10 == 0 and num != 0):
+        return False
+    reverse = 0
+    while(num > reverse):
+        reverse = reverse*10 + num % 10
+        num = num//10
+
+    return num == reverse or num == reverse // 10
 
 
 num = 131

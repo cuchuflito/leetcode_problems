@@ -45,6 +45,7 @@ def solution2(s):
     return maxLength    
     
 def solution3(s):
+    #mismo que solution 1 pero mas pythonic
     ans = 0
     sub = ''
     for char in s:
